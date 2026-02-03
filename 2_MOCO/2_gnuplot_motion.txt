@@ -1,0 +1,32 @@
+cd '/Func'
+
+set terminal postscript enhanced color solid "Helvetica" 15
+set out "motion_translation.ps"
+set key left bottom
+set title "Motion translation across TRs"
+set ylabel "Displacement (mm)"
+set xlabel "TR"
+set size ratio 0.6
+plot "rp_tMT_ON.txt" u 0:1 with lines title "MT ON x" linecolor rgb "blue" ,\
+     "rp_tMT_ON.txt" u 0:2 with lines title "MT ON y" linecolor rgb "green" ,\
+     "rp_tMT_ON.txt" u 0:3 with lines title "MT ON z" linecolor rgb "red" ,\
+     "rp_tMT_OFF.txt" u 0:1 with lines title "MT OFF x" linecolor rgb "dark-blue" ,\
+     "rp_tMT_OFF.txt" u 0:2 with lines title "MT OFF y" linecolor rgb "dark-green" ,\
+     "rp_tMT_OFF.txt" u 0:3 with lines title "MT OFF z" linecolor rgb "dark-red"
+
+
+set terminal postscript enhanced color solid "Helvetica" 15
+set out "motion_rotation.ps"
+set key left bottom
+set title "Motion rotation across TRs"
+set ylabel "Rotation (rad)"
+set xlabel "TR"
+set size ratio 0.6
+plot "rp_tMT_ON.txt" u 0:4 with lines title "MT ON x-pitch" linecolor rgb "blue" ,\
+     "rp_tMT_ON.txt" u 0:5 with lines title "MT ON z-roll" linecolor rgb "green" ,\
+     "rp_tMT_ON.txt" u 0:6 with lines title "MT ON y-yaw" linecolor rgb "red" ,\
+     "rp_tMT_OFF.txt" u 0:4 with lines title "MT OFF x-pitch" linecolor rgb "dark-blue" ,\
+     "rp_tMT_OFF.txt" u 0:5 with lines title "MT OFF z-roll" linecolor rgb "dark-green" ,\
+     "rp_tMT_OFF.txt" u 0:6 with lines title "MT OFF y-yaw" linecolor rgb "dark-red"
+
+exit

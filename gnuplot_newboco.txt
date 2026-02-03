@@ -1,0 +1,14 @@
+TR = 2.38
+#set terminal qt enhanced 40
+set terminal postscript enhanced color solid "Helvetica" 25
+set out my_title
+
+set title "Laminar Profile" 
+set ylabel my_ylabel
+set xlabel "Cortical Depth"
+set key top left
+
+plot my_data u 0:($1) w lines title ""  linewidth 3 linecolor rgb "red"  ,\
+
+exit
+

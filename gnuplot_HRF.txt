@@ -1,0 +1,17 @@
+TR = 2.38
+#set terminal qt enhanced 40
+set terminal postscript enhanced color solid "Helvetica" 25
+set out my_title
+
+set title "HRF" 
+set ylabel my_ylabel
+set xlabel "Time (second)"
+set key top right
+
+plot ON_data u ($0*TR):($1) w lines title "MTC"  linewidth 3 linecolor rgb "red"  ,\
+     ON_data u ($0*TR):($1):($3)/sqrt($2-1) w yerrorbars title "" pt 1  linewidth 2 linecolor rgb "red"  ,\
+     OFF_data u ($0*TR):($1) w lines title "BOLD"  linewidth 3 linecolor rgb "blue"  ,\
+     OFF_data u ($0*TR):($1):($3)/sqrt($2-1) w yerrorbars title "" pt 1  linewidth 2 linecolor rgb "blue"  ,\
+
+exit
+
