@@ -2,7 +2,7 @@ Code repository for MTC fMRI: data processing, simulation and experiment
 
 Software:
 
-MATLAB R2022a
+MATLAB R2022a (https://www.mathworks.com/products/matlab.html)
 
 SPM12 (https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)
 
